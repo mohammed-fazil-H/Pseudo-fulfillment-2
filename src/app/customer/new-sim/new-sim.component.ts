@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { UserServiceService } from 'src/app/Service/user-service.service';
+
 import { NewSim } from '../Model/NewSim';
 import { Response } from '../Model/Response';
 import Swal from 'sweetalert2';
+import { UserServiceService } from '../../Service/user-service.service';
 
 @Component({
   selector: 'app-new-sim',
@@ -13,7 +14,7 @@ export class NewSimComponent {
   //sims: number[] = [1]; // Initially, one set of SIM and Address fields
   email:string='';
   addresses: string[] = ['']; // Initially, one set of SIM and Address fields
-  user:NewSim= new NewSim('','','','','','','','');
+  user:NewSim= new NewSim('','','','','','','','','');
   submitted: any;
 
 
@@ -26,19 +27,21 @@ export class NewSimComponent {
   {
     console.log(this.user);
     console.log(this.user.emailId)
-    this.service.sendM(this.user.emailId).subscribe((response)=>
-    
-    {
-      this.r = response;
-      console.log(this.r)
-      this.user.phoneNumber = this.r.phoneNumber;
-      this.user.simNumber = this.r.simNumber
-      console.log("phn" + this.user.phoneNumber);
-     console.log("sim" + this.user.simNumber);
-     
-     this.service.newSim(this.user).subscribe((response)=>
+    this.service.newSim(this.user).subscribe((response)=>
     {this.submitted=true});
-    console.log(this.user);});
+    // this.service.sendM(this.user.emailId).subscribe((response)=>
+    
+    // {
+    //   this.r = response;
+    //   console.log(this.r)
+    //   this.user.phoneNumber = this.r.phoneNumber;
+    //   this.user.simNumber = this.r.simNumber
+    //   console.log("phn" + this.user.phoneNumber);
+    //  console.log("sim" + this.user.simNumber);
+     
+    //  this.service.newSim(this.user).subscribe((response)=>
+    // {this.submitted=true});
+    // console.log(this.user);});
 
     Swal.fire({
       title: 'Sim Requested Successfully',

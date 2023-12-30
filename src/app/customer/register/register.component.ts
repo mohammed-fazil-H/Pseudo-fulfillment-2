@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Register } from '../Model/Register';
-import { UserServiceService } from 'src/app/Service/user-service.service';
 import Swal from 'sweetalert2';
+import { UserServiceService } from '../../Service/user-service.service';
 
 @Component({
   selector: 'app-register',

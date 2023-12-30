@@ -7,6 +7,7 @@ export class NewSim
                 public gender: string,
                 public simNumber:string,
                 public phoneNumber:string,
+                public address:string,
                 public status: string)
                 { }
     }

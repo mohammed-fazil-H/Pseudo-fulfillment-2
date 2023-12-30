@@ -25,11 +25,10 @@ export class UserServiceService {
     return this.httpClient.post("http://localhost:8035/requestotp",body)
 
   }
-  sendM(mail:any):Observable<Response>{
-    console.log(mail);
-   
-    return this.httpClient.post<Response>("http://localhost:8035/NewSim",mail)
-  }
+  // sendM(mail:any):Observable<Response>{
+  //   console.log(mail);
+  //   return this.httpClient.post<Response>("http://localhost:8035/NewSim",mail)
+  // }
 
   addUser(newUser : Register)
 
@@ -68,9 +67,8 @@ export class UserServiceService {
   }
 
   newSim(user:NewSim){
-    
+    console.log(user);
     return this.httpClient.post('http://localhost:8182/newSim',user);
-
   }
 
   updateUserStatus(phoneNumber: string): Observable<any> {9

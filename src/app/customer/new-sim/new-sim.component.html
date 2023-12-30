@@ -32,7 +32,7 @@
                     </select>
                 </div>
                 <div class="form-wrapper">
-                    <input type="text" value="" placeholder="Enter the Address" class="form-control" required>
+                    <input type="text" value="" placeholder="Enter the Address" name="address"  [(ngModel)]="user.address" class="form-control" required>
                 </div>
                 <button type="submit">Request New Sim</button>
             </form>
